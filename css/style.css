@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.effects{
+    position: relative;
+    display: inline-block;
+    padding: 0 40px;
+    cursor: pointer;
+}
+.text{
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+    color: #0a3d62;
+}
+.text::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+    transition: .6s;
+}
+.effects::before{
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 100%;
+    background: #3c6382;
+    right: 0;
+    top: 0;
+    transition: .6s;
+}
+.effects:hover .text::before,.effects:hover::before{
+    width: 100%;
+}
